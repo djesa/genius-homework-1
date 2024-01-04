@@ -1,0 +1,204 @@
+.about-section {
+  padding-bottom: 52px;
+
+  @media screen and (min-width: $bp-desktop) {
+    padding-bottom: 88px;
+  }
+
+  &__container {
+    display: block;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: flex;
+      gap: 28px;
+    }
+  }
+
+  &__info {
+    padding: 0;
+    max-width: 710px;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding-top: 20px;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      padding-top: 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    max-width: 260px;
+
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 40px;
+      max-width: 530px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 1.72;
+    }
+
+    &--limited {
+      max-width: 340px;
+
+      @media screen and (min-width: $bp-tablet) {
+        max-width: 454px;
+      }
+
+      @media screen and (min-width: $bp-desktop) {
+        max-width: 650px;
+      }
+    }
+
+    &:last-child {
+      position: relative;
+      margin-bottom: 0px;
+      max-width: 314px;
+
+      &::after {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: -45px;
+        right: 0px;
+        background-image: url(../images/star-big.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        animation: spin-scale 1s 5 linear;
+        content: '';
+
+        @media screen and (min-width: $bp-tablet) {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: $bp-tablet) {
+        position: static;
+        max-width: 460px;
+      }
+
+      @media screen and (min-width: $bp-desktop) {
+        max-width: 620px;
+      }
+    }
+  }
+
+  &__photos-container {
+    display: none;
+    position: relative;
+    flex-direction: column;
+    gap: 40px;
+    flex-grow: 1;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: flex;
+    }
+  }
+
+  &__before::before {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 33px;
+    right: 0;
+    background-image: url(../images/star-middle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: spin-scale 1s 5 linear;
+    content: '';
+
+    @media screen and (min-width: $bp-desktop) {
+      right: -20px;
+    }
+  }
+
+  &__photo-before {
+    border-radius: 328px;
+    width: 190px;
+    height: 190px;
+
+    @media screen and (min-width: $bp-desktop) {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__before::after {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 230px;
+    left: 0;
+    background-image: url(../images/star-small.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: spin-scale 1s 5 linear;
+    content: '';
+
+    @media screen and (min-width: $bp-desktop) {
+      top: 270px;
+      left: auto;
+      right: 6px;
+    }
+  }
+
+  &__after {
+    align-self: center;
+
+    @media screen and (min-width: $bp-desktop) {
+      align-self: flex-end;
+    }
+
+    &::before {
+      display: none;
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      bottom: 272px;
+      left: 122px;
+      background-image: url(../images/star-big.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: spin-scale 1s 5 linear;
+      content: '';
+
+      @media screen and (min-width: $bp-desktop) {
+        display: block;
+      }
+    }
+  }
+
+  &__photo-after {
+    border-radius: 328px;
+    width: 190px;
+    height: 190px;
+
+    @media screen and (min-width: $bp-desktop) {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  @keyframes spin-scale {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+
+    30% {
+      transform: rotate(100deg) scale(1.5);
+    }
+
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+}
